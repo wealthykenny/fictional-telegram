@@ -1,0 +1,171 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(165deg, #020617 0%, #0f172a 45%, #0b1025 100%);
+}
+
+.scene-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.14), transparent 36%),
+    radial-gradient(circle at 80% 15%, rgba(244, 114, 182, 0.16), transparent 38%),
+    radial-gradient(circle at 70% 70%, rgba(249, 115, 22, 0.1), transparent 40%);
+  filter: blur(6px);
+}
+
+.glass-panel,
+.feature-card,
+.admin-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 60px -35px rgba(45, 212, 191, 0.5);
+}
+
+.feature-card {
+  border-radius: 1.2rem;
+  padding: 1.1rem;
+  transition: transform 220ms ease, border-color 220ms ease;
+  transform-style: preserve-3d;
+}
+
+.feature-card:hover {
+  border-color: rgba(125, 211, 252, 0.6);
+}
+
+.glass-pill,
+.glass-pill-card {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-pill {
+  border-radius: 999px;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 0.8rem;
+}
+
+.hover-pill {
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.hover-pill:hover {
+  transform: translateY(-2px);
+  color: #ecfeff;
+}
+
+.glass-pill-card {
+  border-radius: 0.9rem;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.72rem;
+}
+
+.gallery-img {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.85rem;
+  display: block;
+  height: 8.4rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.input-glass {
+  width: 100%;
+  margin-top: 0.32rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  padding: 0.62rem 0.75rem;
+  outline: none;
+}
+
+.input-glass:focus {
+  border-color: rgba(125, 211, 252, 0.85);
+}
+
+.cta-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #00111f;
+  background: linear-gradient(90deg, #67e8f9, #f9a8d4);
+  padding: 0.66rem 0.86rem;
+}
+
+.pulse-orb {
+  animation: pulseRune 2s ease-in-out infinite;
+}
+
+.flash-panel {
+  animation: flashGlow 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseRune {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes flashGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0.2), 0 18px 60px -35px rgba(45, 212, 191, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 28px rgba(244, 114, 182, 0.35), 0 18px 60px -35px rgba(45, 212, 191, 0.65);
+  }
+}
+
+.admin-modal {
+  border: 0;
+  border-radius: 1rem;
+  background: transparent;
+  max-width: 34rem;
+  padding: 0;
+  width: calc(100% - 2rem);
+}
+
+.admin-modal::backdrop {
+  backdrop-filter: blur(5px);
+  background: rgba(2, 6, 23, 0.65);
+}
+
+.admin-card {
+  border-radius: 1rem;
+  margin: 0;
+  padding: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .gallery-img {
+    height: 9.6rem;
+  }
+}
