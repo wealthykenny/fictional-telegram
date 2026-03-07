@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-royal text-parchment font-ebgaramond;
+  background-image: radial-gradient(circle at top, #334155, #0f172a 50%);
+  min-height: 100vh;
+}
+
+.parchment-panel {
+  @apply bg-parchment text-slate-800 rounded-xl border-2 border-gold shadow-xl p-6;
+}
