@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Knights of Shinning Lights</title>
+    <meta
+      name="description"
+      content="Join The Knights of Shinning Lights — a non-profit society for young men and maidens to connect, grow in business, and creativity."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Cinzel"', 'serif'],
+              body: ['"Inter"', 'system-ui', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-body text-slate-100">
+    <div class="scene-bg" aria-hidden="true"></div>
+
+    <main class="relative z-10 mx-auto max-w-6xl px-4 pb-14 pt-6 sm:px-6 lg:px-8">
+      <header class="glass-panel rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <span class="glass-pill">Non-Profit • Community of Purpose</span>
+          <button id="openAdmin" class="glass-pill hover-pill">Admin C-Panel</button>
+        </div>
+
+        <h1 id="heroTitle" class="mt-5 font-display text-3xl leading-tight sm:text-5xl">
+          The Knights of Shinning Lights
+        </h1>
+        <p id="heroLead" class="mt-4 max-w-3xl text-sm text-slate-200 sm:text-base">
+          A mystical, scientific, and medieval-inspired brotherhood & sisterhood where young men and
+          maidens connect, grow in business, and sharpen creativity through service.
+        </p>
+        <p class="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
+          Disclaimer: This is not a religious organization.
+        </p>
+
+        <div class="mt-6 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
+          <div class="glass-pill-card">🛡️ Human connections first</div>
+          <div class="glass-pill-card">🏰 Official WhatsApp screening</div>
+          <div class="glass-pill-card">📈 Weekly member advancement</div>
+          <div class="glass-pill-card">✨ Assigned title + rhyming username</div>
+        </div>
+      </header>
+
+      <section class="mt-8 grid gap-5 lg:grid-cols-2">
+        <article class="feature-card" data-tilt>
+          <h2 class="font-display text-2xl text-cyan-100">The Oath of Good Deeds</h2>
+          <p id="missionText" class="mt-3 text-sm text-slate-200">
+            The Knights of Shinning Lights is dedicated to good deeds, mentorship, collaboration, and
+            real human connection.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200">
+            <li>• Build your business discipline with accountability circles.</li>
+            <li>• Strengthen creative courage through weekly challenge quests.</li>
+            <li>• Grow through honorable service and measurable contribution.</li>
+          </ul>
+
+          <svg class="mt-5 w-full" viewBox="0 0 420 70" aria-hidden="true">
+            <defs>
+              <linearGradient id="runeLine" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stop-color="#22d3ee" />
+                <stop offset="100%" stop-color="#f0abfc" />
+              </linearGradient>
+            </defs>
+            <path d="M8 35h404" stroke="url(#runeLine)" stroke-width="2" stroke-linecap="round" />
+            <circle cx="60" cy="35" r="6" fill="#22d3ee" class="pulse-orb" />
+            <circle cx="210" cy="35" r="6" fill="#f59e0b" class="pulse-orb" />
+            <circle cx="360" cy="35" r="6" fill="#e879f9" class="pulse-orb" />
+          </svg>
+        </article>
+
+        <article class="feature-card" data-tilt>
+          <h2 class="font-display text-2xl text-fuchsia-100">Medieval Gallery</h2>
+          <p class="mt-3 text-sm text-slate-200">
+            Inspired by castles, armor, and old-world resolve.
+          </p>
+          <div class="mt-4 grid grid-cols-2 gap-3">
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
+              alt="Medieval castle under dramatic sky"
+              loading="lazy"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1527490087247-4bbf8f9916d3?auto=format&fit=crop&w=900&q=80"
+              alt="Knight armor closeup"
+              loading="lazy"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1517770413964-df8ca61194a6?auto=format&fit=crop&w=900&q=80"
+              alt="Ancient stone hall with medieval atmosphere"
+              loading="lazy"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&w=900&q=80"
+              alt="Sword and shield inspired composition"
+              loading="lazy"
+            />
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-8 grid gap-5 lg:grid-cols-2">
+        <article class="glass-panel rounded-3xl p-6">
+          <h2 class="font-display text-2xl">Signup & Knight Identity</h2>
+          <p class="mt-2 text-sm text-slate-200">
+            Enter your details to receive your ceremonial title and matching username.
+          </p>
+
+          <form id="signupForm" class="mt-4 space-y-3">
+            <label class="block text-sm">
+              Full Name
+              <input
+                required
+                name="fullname"
+                class="input-glass"
+                placeholder="Your full name"
+              />
+            </label>
+
+            <label class="block text-sm">
+              Email
+              <input
+                required
+                name="email"
+                type="email"
+                class="input-glass"
+                placeholder="you@example.com"
+              />
+            </label>
+
+            <label class="block text-sm">
+              Gender
+              <select required name="gender" class="input-glass">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </label>
+
+            <button type="submit" class="cta-btn">Generate Identity</button>
+          </form>
+
+          <div class="mt-4 rounded-2xl border border-white/20 bg-black/25 p-4">
+            <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Generated identity</p>
+            <p id="generatedName" class="mt-2 font-display text-2xl">Awaiting signup...</p>
+            <p id="generatedUsername" class="mt-1 text-sm text-slate-200">Username: pending</p>
+          </div>
+          <p id="formMessage" class="mt-3 text-sm text-emerald-200" aria-live="polite"></p>
+        </article>
+
+        <article class="glass-panel rounded-3xl p-6 flash-panel">
+          <h2 id="whatsappTitle" class="font-display text-2xl">WhatsApp Screening</h2>
+          <p id="whatsappText" class="mt-2 text-sm text-slate-200">
+            Yes, we have an official WhatsApp group. Screening is essential before entry.
+          </p>
+
+          <div class="mt-5 space-y-3 text-sm text-slate-200">
+            <div class="glass-pill-card">Step 1: Complete signup & receive your knight identity.</div>
+            <div class="glass-pill-card">Step 2: Pass screening to enter the official group.</div>
+            <div class="glass-pill-card">Step 3: Advance automatically every week through activity.</div>
+          </div>
+
+          <div class="mt-5 rounded-2xl border border-cyan-200/25 bg-cyan-400/10 p-4">
+            <p class="text-xs uppercase tracking-[0.2em] text-cyan-100">Living writeup</p>
+            <p id="footerNote" class="mt-2 text-sm text-slate-100">
+              We are a non-profit order focused on people, purpose, and honorable impact.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="adminDialog" class="admin-modal">
+      <form id="adminLoginForm" class="admin-card">
+        <h2 class="font-display text-2xl">Admin C-Panel Login</h2>
+        <p class="mt-2 text-xs text-slate-300">Credentials are validated against runtime secrets.</p>
+        <input class="input-glass mt-4" name="username" placeholder="Admin username" required />
+        <input
+          class="input-glass mt-3"
+          name="password"
+          placeholder="Admin password"
+          required
+          type="password"
+        />
+        <p id="adminLoginMsg" class="mt-2 text-xs text-rose-200"></p>
+        <div class="mt-4 flex gap-2">
+          <button type="submit" class="cta-btn">Unlock</button>
+          <button type="button" id="closeAdmin" class="glass-pill">Close</button>
+        </div>
+      </form>
+
+      <section id="adminPanel" class="admin-card hidden">
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="font-display text-2xl">Admin C-Panel</h2>
+          <button id="logoutAdmin" class="glass-pill">Logout</button>
+        </div>
+        <p class="mt-2 text-xs text-slate-300">Update public writeups and save instantly.</p>
+
+        <label class="mt-4 block text-xs uppercase tracking-wider text-slate-200">Hero lead text</label>
+        <textarea id="adminHeroLead" class="input-glass h-20"></textarea>
+
+        <label class="mt-3 block text-xs uppercase tracking-wider text-slate-200">Mission text</label>
+        <textarea id="adminMissionText" class="input-glass h-20"></textarea>
+
+        <label class="mt-3 block text-xs uppercase tracking-wider text-slate-200">WhatsApp block</label>
+        <textarea id="adminWhatsappText" class="input-glass h-20"></textarea>
+
+        <label class="mt-3 block text-xs uppercase tracking-wider text-slate-200">Footer note</label>
+        <textarea id="adminFooterNote" class="input-glass h-20"></textarea>
+
+        <div class="mt-4 flex gap-2">
+          <button id="saveContent" class="cta-btn" type="button">Save Writeup</button>
+          <button id="resetContent" class="glass-pill" type="button">Reset Default</button>
+        </div>
+        <p id="adminSaveMsg" class="mt-2 text-xs text-emerald-200"></p>
+      </section>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
