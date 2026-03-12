@@ -2,12 +2,263 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-royal text-parchment font-ebgaramond;
-  background-image: radial-gradient(circle at top, #334155, #0f172a 50%);
-  min-height: 100vh;
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #fff;
 }
 
-.parchment-panel {
-  @apply bg-parchment text-slate-800 rounded-xl border-2 border-gold shadow-xl p-6;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #fff;
+  background: radial-gradient(circle at 12% 10%, #ffc38a 0%, #ff7f11 24%, #141414 70%);
+}
+
+.app-shell {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.08));
+  border: 3px solid rgba(255, 255, 255, 0.64);
+  border-radius: 1.3rem;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px) saturate(1.35);
+  padding: 0.95rem;
+}
+
+h1,
+h2,
+p,
+label,
+span,
+li {
+  color: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.45rem, 5vw, 2.2rem);
+  font-weight: 900;
+}
+
+h2 {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1rem, 3.2vw, 1.3rem);
+}
+
+.top-panel p {
+  margin: 0.3rem 0 0;
+  font-weight: 600;
+}
+
+.small-note {
+  margin: 0 0 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.input-grid {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: 1fr;
+}
+
+label,
+.input-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.36);
+  color: #fff;
+  padding: 0.7rem;
+  font-size: 0.96rem;
+  font-weight: 650;
+}
+
+.stack-mobile {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.ratio-grid,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.ratio-btn,
+.solid-btn,
+.small-btn {
+  border: 2px solid #fff;
+  color: #fff;
+  background: #ff7a00;
+  border-radius: 0.8rem;
+  padding: 0.5rem 0.78rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.ratio-btn.active {
+  background: #fff;
+  color: #ff7a00;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.reference-preview,
+.preview-frame {
+  margin-top: 0.6rem;
+  border: 2px dashed rgba(255, 255, 255, 0.78);
+  border-radius: 0.95rem;
+  background: rgba(20, 20, 20, 0.44);
+  padding: 0.5rem;
+}
+
+.reference-preview img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 0.7rem;
+}
+
+.preview-frame {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+}
+
+.preview-frame img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 0.7rem;
+}
+
+.status-text {
+  margin: 0.5rem 0 0;
+  font-weight: 800;
+}
+
+.draft-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.draft-card {
+  padding: 0.45rem;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.draft-card img {
+  width: 100%;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 0.6rem;
+}
+
+.draft-card p {
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin: 0.45rem 0;
+}
+
+.draft-actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.small-btn {
+  font-size: 0.73rem;
+  padding: 0.35rem 0.58rem;
+}
+
+.small-btn.danger {
+  background: #af0000;
+}
+
+.referral-list {
+  margin: 0.7rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.loading-wrap {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.45rem;
+  background: linear-gradient(140deg, #0f0f0f, #ff7600);
+}
+
+.loading-wrap h1 {
+  margin: 0;
+  font-size: 1.85rem;
+}
+
+.robot-track {
+  width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.robot-core {
+  fill: #ffffff;
+}
+
+.robot-eye {
+  fill: #ff7600;
+}
+
+.robot-limb {
+  stroke: #fff;
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+
+@media (min-width: 760px) {
+  .app-shell {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .glass-panel {
+    padding: 1.2rem;
+  }
+
+  .input-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .draft-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

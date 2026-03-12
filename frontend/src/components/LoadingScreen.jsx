@@ -1,27 +1,30 @@
 import { motion } from 'framer-motion';
 
-export function LoadingScreen() {
+export function LoadingScreen({ onComplete }) {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950">
+    <div className="loading-wrap" onAnimationEnd={onComplete}>
       <motion.div
-        className="relative h-32 w-32 rounded-full border-4 border-gold"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+        className="robot-track"
+        initial={{ x: -140 }}
+        animate={{ x: 140 }}
+        transition={{ duration: 1.5, repeat: 1, repeatType: 'reverse', ease: 'easeInOut' }}
+        onAnimationComplete={onComplete}
       >
-        <motion.div
-          className="absolute left-1/2 top-1/2 h-16 w-1 -translate-x-1/2 -translate-y-full bg-crimson"
-          animate={{ rotate: [-20, 20, -20] }}
-          transition={{ duration: 0.9, repeat: Infinity }}
-        />
+        <svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="Robot walking">
+          <rect x="34" y="22" width="52" height="36" rx="10" className="robot-core" />
+          <circle cx="48" cy="40" r="5" className="robot-eye" />
+          <circle cx="72" cy="40" r="5" className="robot-eye" />
+          <rect x="44" y="8" width="32" height="18" rx="8" className="robot-core" />
+          <line x1="60" y1="8" x2="60" y2="2" className="robot-limb" />
+          <circle cx="60" cy="2" r="2.5" className="robot-eye" />
+          <line x1="40" y1="58" x2="26" y2="76" className="robot-limb" />
+          <line x1="80" y1="58" x2="94" y2="76" className="robot-limb" />
+          <line x1="38" y1="30" x2="20" y2="44" className="robot-limb" />
+          <line x1="82" y1="30" x2="100" y2="44" className="robot-limb" />
+        </svg>
       </motion.div>
-      <motion.h1
-        className="mt-8 font-cinzel text-3xl text-gold"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 0.8, 1] }}
-        transition={{ duration: 1.8, repeat: Infinity }}
-      >
-        THE KNIGHT OF ORDER
-      </motion.h1>
+      <h1>Flex4Genz</h1>
+      <p>Booting AWS-powered image lab...</p>
     </div>
   );
 }
